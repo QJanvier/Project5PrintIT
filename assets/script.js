@@ -20,13 +20,12 @@ const slides = [
 // move left
 document.getElementById("arrow_left")
 	.addEventListener("click", function() {
-		if (i = 0) {
+		if (i == 0) {
 			i = slidesLength - 1;
 		}
 		else {
 			i--;
 		}
-		console.log(arrow_left);
 		slideImage();
 	});
 
@@ -39,7 +38,6 @@ document.getElementById("arrow_right")
 		else {
 			i++;
 		}
-    console.log(arrow_right)
 	slideImage();
 	});
 
@@ -72,7 +70,7 @@ function pinPoint() {
 const imgElmt = document.querySelector('#banner > img')
 const elmtName = document.querySelector('#banner > p')
 function slideImage() {
-	imgElmt.src = './assets/images/slideshow/'; //select next img needed in the path
-	elmtName.innerHTML = slides[i].tagLine; // slides[i] undefined when using left arrow
+	imgElmt.src = './assets/images/slideshow/'+slides[i].image;
+	elmtName.innerHTML = slides[i].tagLine;
 	pinPoint();
 }
